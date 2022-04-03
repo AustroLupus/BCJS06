@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h2 class="text-white">black and White SpA</h2>
+    </nav>
+    <form action="/url" class="form-control form-control-lg">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="mb-3">
+                    <label for="url" class="form-label">Imagen del URL</label>
+                    <input type="url" name="url" class="form-control" id="url" aria-describedby="url">
+                    <input type="hidden" id="lat" name="lat">
+                    <input type="hidden" id="long" name="long">
+                </div>
+                <button type="submit" onclick="rastrear()" class="btn btn-dark">Subir imagen al servidor</button>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    /* const latitud
+    const longitud
+function rastrear(){
+    navigator.geolocation.getCurrentPosition(MiUbicacion => {
+    const latitud=MiUbicacion.coords.latitude
+    const longitud=MiUbicacion.coords.longitude
+    document.getElementById('lat').value=latitud
+    document.getElementById('long').value=longitud
+    console.log(`Latitud ${latitud} y longitud ${longitud}`)
+    console.log(MiUbicacion)
+})
+} */
+//console.log(`Otro Latitud ${latitud} y longitud ${longitud}`)
+function rastrear(){ window.onload = async function(){
+			const pos = await ubicar()
+			$('#lat').val(pos.coords.latitude);
+			$('#long').val(pos.coords.longitude);
+            console.log('Deberia leer este mensaje')
+            console.log(`Latitud ${pos.coords.latitude} y longitud ${pos.coords.longitude}`);
+		}
+		function ubicar() {
+				return new Promise((myResolve, myReject) => {
+					navigator.geolocation.getCurrentPosition(
+		 		pos => myResolve(pos))
+				})
+		}
+    }
+      
+</script>
+</body>
+
+</html>

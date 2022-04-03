@@ -1,0 +1,24 @@
+{
+  "name": "evaluacion",
+  "version": "1.0.0",
+  "description": "Evaluacion de modulo 6 Bootcamp Fullstack JavaScript Plataforma 5",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "evaluacion",
+    "prueba",
+    "nodejs"
+  ],
+  "author": "Carlos Horta",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "express": "^4.17.3",
+    "moment": "^2.29.1",
+    "nodemailer": "^6.7.2",
+    "uuid": "^8.3.2"
+  }
+}
